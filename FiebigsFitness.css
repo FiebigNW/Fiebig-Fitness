@@ -1,0 +1,374 @@
+html{
+    background-image: url("FiebigFitnessBackground.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+#loginSection {
+    width: 300px; 
+    padding: 20px; 
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: aliceblue;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    opacity: 70%; 
+    margin: auto;
+    margin-top: 10%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+input{
+    justify-content: left;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 35px;
+    width: 100%;
+    max-width: 250px; 
+    padding: 0 15px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5; 
+    transition: all 0.1s ease-in-out; 
+}
+
+input:focus {
+    border-color: #33b8b8; 
+    box-shadow: 0 0 10px rgba(51, 184, 184, 0.5); 
+    outline: none; 
+}
+
+input::placeholder {
+    color: #aaa;
+    font-style: italic; 
+}
+
+input:disabled {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #888; 
+}
+
+#createAccount{
+    width: 300px; 
+    padding: 20px; 
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: aliceblue;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    opacity: 70%; 
+    margin: auto;
+    margin-top: 10%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+h2{
+    color: lightblue;
+    font-style: italic;
+    font-size:xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 0%;
+}
+
+#title{
+   width: min-content;
+   border: 5px;
+   border-color: lightblue;
+   border-radius: 5px;
+   padding: 5px;
+}
+
+#titleButton{
+    margin: auto;
+    border: 0;
+    color: rgb(0, 128, 255);
+    background-color: white;
+    height: 75px;
+}
+
+#titleButton:hover{
+    color: rgb(0, 128, 255);
+    border-color: rgb(0, 128, 255);
+    border: solid;
+    border-color: rgb(0, 128, 255);
+}
+
+#homeTitle{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: white;  
+}
+
+#homeButtons {
+    border: 5px solid rgb(0, 128, 255); 
+    padding: 2px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 128, 255);
+    height: 50px;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer; 
+    transition: all 0.1s ease-in-out; 
+    border-radius: 5px; 
+}
+
+#homeButtons:hover {
+    color: rgb(0, 128, 255);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 128, 255);
+}
+
+#homeButtons:active {
+    color: white;
+    background-color: rgb(0, 102, 204);
+}
+
+
+#homeButtonsContainer{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: rgb(0, 128, 255);
+}
+
+.loginButton {
+    border-radius: 12px;
+    padding: 12px 20px; 
+    margin: 10px auto;
+    color: #007bff;
+    background-color: aliceblue; 
+    border: 2px solid #007bff; 
+    width: auto; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: all 0.1s ease-in-out;
+}
+
+.loginButton:hover {
+    color: white; 
+    background-color: rgb(33, 184, 184);
+    border-color: rgb(33, 184, 184); 
+    transform: translateY(-1px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.loginButton:active {
+    transform: translateY(2px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.loginButton:focus {
+    outline: none; 
+    border-color: #007bff; 
+}
+
+#homeProfile{
+    width: 600px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#caloriesLayout{
+    display: flex;
+    flex-wrap: row;
+}
+
+#foodProfile{
+    display: none;
+}
+
+#foodHome{
+    width: 700px;
+    min-height: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#exerciseHome{
+    width: 400px;
+    height: 330px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#goalsHome{
+    width: 300px; 
+    padding: 20px; 
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    opacity: 70%; 
+    margin: auto;
+    margin-top: 5%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+#settingsHome{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#bmiHome{
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#bmiAnswer{
+    display: flex;
+    flex-direction: row;
+}
+
+#calorieCalcHome {
+    width: 400px;
+    height: 430px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#calculateCaloriesAnswer{
+    display: flex;
+    flex-wrap: row;
+}
+
+#dateChangeButtons{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+#workoutHome{
+    width: 400px;
+    height: 430px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#macroNutrientsLayout > div {
+    margin-bottom: 10px;
+}
+
+#macroNutrientsLayout div h3 {
+    margin: 0;
+    padding-right: 20px;
+}
+
+#macroNutrientsLayout > div > div {
+    display: flex;
+    flex-wrap: nowrap;  
+    gap: 15px;         
+    align-items: center; 
+}
+
+#macroNutrientsLayout h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+#enterFoodLayout{
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.loginButton {
+    border-radius: 12px;
+    padding: 12px 20px; 
+    margin: 10px auto;
+    color: #007bff;
+    background-color: aliceblue; 
+    border: 2px solid #007bff; 
+    width: auto; 
+    font-size: 14px; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: all 0.1s ease-in-out;
+}
+
+#enterWorkoutLayout{
+    width: 300px;
+    height: 600px;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    box-shadow: 10px;
+    opacity: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
