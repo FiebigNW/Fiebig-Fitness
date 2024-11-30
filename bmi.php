@@ -30,15 +30,17 @@
                 
             <br>
 
-            <label for="heightInput"><b>Enter Your Height:</b></label>
-            <input type='number' id='heightInput' placeholder="Inches"><br>
-                    
-            <br>
-                    
-            <label for="weightInput"><b>Enter Your Weight:</b></label>
-            <input type='number' id='weightInput' placeholder="Pounds"><br>
+            <label><b>Height: </b></label>
+                <input type = "number" id = "heightFeet" placeholder="Feet" style = "width: 100px;"></input>
+                <input type = "number" id = "heightInches" placeholder="Inches" style = "width: 100px;"></input>
+
+                <br><br>
+
+                <label for = "weightInput"><b>Weight: </b></label>
+                <input type = "number" id = "weightInput" placeholder = "Pounds"></input>
                 
-            <br>
+                <br><br>
+        
             <div id = "bmiAnswer">     
                 <button id = "functionButton" class = "loginButton" onclick = processEntries()>Calculate</button> 
                     <div style = "flex-grow: 1;"></div>
@@ -46,12 +48,11 @@
             </div>
             <script>
                 function processEntries() {	
-                    let height = document.getElementById("heightInput");
+                    let heightFeet = document.getElementById("heightFeet");
+                    let heightInches = document.getElementById("heightInches");
                     let weight = document.getElementById("weightInput");
-                    let output = document.getElementById("bmiOutput");
                     
-                    if(height.value < 0 && weight.value < 0 || height.value == "" && weight.value == "" || height.value < 0 && weight.value == "" || height.value == "" && weight.value < 0){
-                    } else if (weight.value < 0 || weight.value == ""){
+                    if (weight.value < 0 || weight.value == ""){
                         output.textContent = "Invalid Weight";
                         output.style.textAlign = "center"; 
                         output.style.border = "solid";  
@@ -59,7 +60,7 @@
                         output.style.height = "auto"; 
                         output.style.borderRadius = "15px";
                         output.style.padding = "5px";
-                    } else if (height.value < 0 || height.value == ""){        
+                    } else if (heightFeet.value < 0 || heightFeet.value == "" || heightInches.value < 0 || heightInches.value == ""){        
                         output.textContent = "Invalid Height";
                         output.style.textAlign = "center"; 
                         output.style.border = "solid";  
@@ -68,7 +69,8 @@
                         output.style.borderRadius = "15px";
                         output.style.padding = "5px";
                     } else{
-                        let bmi = (703 * weight.value) / Math.pow(height.value, 2);
+                        let totalHeight = (heightFeet.value * 12) + heightInches.value;
+                        let bmi = (703 * weight.value) / Math.pow(totalHeight, 2);
                         bmi = Math.round(bmi * 10) / 10
                         output.textContent = "Total: " + bmi;
                         output.style.textAlign = "center"; 
