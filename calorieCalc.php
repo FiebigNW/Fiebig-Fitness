@@ -33,28 +33,28 @@
 
         <div id = "calorieCalcLayout">
                 <label for = "ageInput"><b>Age: </b></label>
-                <input type = "number" id = "ageInput" placeholder="Years"></input>
+                <input type = "number" id = "ageInput" placeholder="Years" autocomplete="off"></input>
                 
                 <br><br>
 
                 <label for = "maleInput"><b>Gender: </b></label>
                 <br><br>
                     <label for = "maleInput" ><b>Male</b></label>
-                    <input type = "checkbox" id = "maleInput" style = "width: 20px; height: 15px;"></input>
+                    <input type = "checkbox" id = "maleInput" style = "width: 20px; height: 15px;" autocomplete="off"></input>
 
                     <label for = "femaleInput"><b>Female</b></label>
-                    <input type = "checkbox" id = "femaleInput" style = "width: 20px; height: 15px;"></input>
+                    <input type = "checkbox" id = "femaleInput" style = "width: 20px; height: 15px;" autocomplete="off"></input>
 
                 <br><br>
 
                 <label><b>Height: </b></label>
-                <input type = "number" id = "heightFeet" placeholder="Feet" style = "width: 100px;"></input>
-                <input type = "number" id = "heightInches" placeholder="Inches" style = "width: 100px;"></input>
+                <input type = "number" id = "heightFeet" placeholder="Feet" style = "width: 100px;" autocomplete="off"></input>
+                <input type = "number" id = "heightInches" placeholder="Inches" style = "width: 100px;" autocomplete="off"></input>
 
                 <br><br>
 
                 <label for = "weightInput"><b>Weight: </b></label>
-                <input type = "number" id = "weightInput" placeholder = "Pounds"></input>
+                <input type = "number" id = "weightInput" placeholder = "Pounds" autocomplete="off"></input>
                 
                 <br><br>
 
@@ -117,8 +117,8 @@
                             output.style.borderRadius = "15px";
                             output.style.padding = "5px";
                         } else{
-                            let weightInKg = weight.value / 2.205; // Convert pounds to kg
-                            let heightInCm = (parseFloat(heightFeet.value) * 12 + parseFloat(heightInches.value)) * 2.54; // Convert height to cm
+                            let weightInKg = weight.value / 2.205; 
+                            let heightInCm = (parseFloat(heightFeet.value) * 12 + parseFloat(heightInches.value)) * 2.54; 
                             let bmr;
 
                             if (male.checked) {

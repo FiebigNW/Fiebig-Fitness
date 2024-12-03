@@ -95,7 +95,7 @@
             <h4>Current Calorie Goal: <?php echo htmlspecialchars($nutritionGoal); ?></h4>
 
             <form action="updateNutritionGoals.php" method="POST">
-                <input type="number" name="updateCalorieInput" placeholder="Update Calorie Goal">
+                <input type="number" name="updateCalorieInput" placeholder="Update Calorie Goal" autocomplete="off">
                 <button type="submit" class="loginButton" id="updateNutrition">Update</button>
             </form>
 
@@ -117,7 +117,7 @@
 
             <h4>Current Exercise Goal: <?php echo htmlspecialchars($exerciseGoal); ?></h4>
             <form action="updateExerciseGoals.php" method="POST">            
-                <input type="number" name="updateExerciseInput" placeholder="Update Exercise Goal">
+                <input type="number" name="updateExerciseInput" placeholder="Update Exercise Goal" autocomplete="off">
                 <button type="submit" class="loginButton" id="updateExercise">Update</button>
             </form>
 

@@ -1,7 +1,6 @@
 <?php
     session_start();
     if (!isset($_SESSION['AccountID'])) {
-        // Redirect to login page if not logged in
         header("Location: index.php");
         exit();
     }

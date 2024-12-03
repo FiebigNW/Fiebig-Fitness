@@ -33,6 +33,14 @@ try {
                 <a href="settings.php"><button id="titleButton">Settings</button></a>
                 <a href="logout.php"><button id="titleButton">Logout</button></a>
             </div>
+            <style>
+            .error-message {
+                color: red;
+                margin-bottom: 10px;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
         </div>  
 
         <div id="homeButtonsContainer">
@@ -55,46 +63,54 @@ try {
                     <h4>Workout Plan</h4>
                 
                     <label for="workoutName">Name:</label>
-                    <input type="text" name="workoutName" placeholder="Name Workout" style="width: 150px;">
+                    <input type="text" name="workoutName" placeholder="Name Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
                 
                     <label for="workoutDayOne">Day 1:</label>
-                    <input type="text" name="workoutDayOne" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDayOne" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDayTwo">Day 2:</label>
-                    <input type="text" name="workoutDayTwo" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDayTwo" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDayThree">Day 3:</label>
-                    <input type="text" name="workoutDayThree" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDayThree" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDayFour">Day 4:</label>
-                    <input type="text" name="workoutDayFour" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDayFour" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDayFive">Day 5:</label>
-                    <input type="text" name="workoutDayFive" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDayFive" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDaySix">Day 6:</label>
-                    <input type="text" name="workoutDaySix" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDaySix" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
 
                     <br><br>
 
                     <label for="workoutDaySeven">Day 7:</label>
-                    <input type="text" name="workoutDaySeven" placeholder="Enter Workout" style="width: 150px;">
+                    <input type="text" name="workoutDaySeven" placeholder="Enter Workout" style="width: 150px;" autocomplete="off">
                     
                     <br><br>               
                 </div>  
             </div>
+
+            <?php
+                if (isset($_SESSION['errorMessage'])) {
+                    echo '<p class="error-message">' . htmlspecialchars($_SESSION['errorMessage']) . '</p>';
+                    unset($_SESSION['errorMessage']);
+                }
+            ?>
+
 
             <div id="dateChangeButtons"> 
             <div style="flex-grow: 0.4;"></div>  

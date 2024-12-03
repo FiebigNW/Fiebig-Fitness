@@ -1,7 +1,6 @@
 <?php
     session_start();
     if (!isset($_SESSION['AccountID'])) {
-        // Redirect to login page if not logged in
         header("Location: index.php");
         exit();
     }
@@ -34,6 +33,14 @@
             <a href = "settings.php"><button id = "titleButton">Settings</button></a>
             <a href = "logout.php"><button id = "titleButton">Logout</button></a>
         </div>
+        <style>
+            .error-message {
+                color: red;
+                margin-bottom: 10px;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
     </div>  
     
     <div id = 'homeButtonsContainer'>
@@ -57,39 +64,46 @@
             <h4>Dinner</h4>
             <form action = "addDinner.php" method = "POST">
                 <label for = "dinnerInput">Name</label>
-                <input type = "text" name = "dinnerInput" placeholder="Type Lunch Name" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerInput" placeholder="Type Lunch Name" style = "width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for = "dinnerCalorieInput">Calories</label>
-                <input type = "text" name = "dinnerCalorieInput" placeholder="Amount Of Calories" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerCalorieInput" placeholder="Amount Of Calories" style = "width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for = "dinnerCarbsInput">Carbs</label>
-                <input type = "text" name = "dinnerCarbsInput" placeholder="Enter Carbs" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerCarbsInput" placeholder="Enter Carbs" style = "width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for = "dinnerFatsInput">Fats</label>
-                <input type = "text" name = "dinnerFatsInput" placeholder="Enter Fats" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerFatsInput" placeholder="Enter Fats" style = "width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for = "dinnerProteinInput">Protein</label>
-                <input type = "text" name = "dinnerProteinInput" placeholder="Enter Protein" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerProteinInput" placeholder="Enter Protein" style = "width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for = "dinnerSodiumInput">Sodium</label>
-                <input type = "text" name = "dinnerSodiumInput" placeholder="Enter Sodium" style = "width: 150px;"></input>
+                <input type = "text" name = "dinnerSodiumInput" placeholder="Enter Sodium" style = "width: 150px;" autocomplete="off"></input>
  
                 <br>
 
                 <label for="dinnerSugarInput">Sugar</label>
-                <input type="text" name="dinnerSugarInput" placeholder="Enter Sugar" style="width: 150px;"></input>
+                <input type="text" name="dinnerSugarInput" placeholder="Enter Sugar" style="width: 150px;" autocomplete="off"></input>
 
-                <br><br>               
+                <br><br>
+                
+                <?php
+                    if (isset($_SESSION['errorMessage'])) {
+                        echo '<p class="error-message">' . htmlspecialchars($_SESSION['errorMessage']) . '</p>';
+                        unset($_SESSION['errorMessage']);
+                    }
+                ?>
                 
                 <div id = dateChangeButtons>    
                     <div> 

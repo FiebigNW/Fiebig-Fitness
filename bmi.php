@@ -31,13 +31,13 @@
             <br>
 
             <label><b>Height: </b></label>
-                <input type = "number" id = "heightFeet" placeholder="Feet" style = "width: 100px;"></input>
-                <input type = "number" id = "heightInches" placeholder="Inches" style = "width: 100px;"></input>
+                <input type = "number" id = "heightFeet" placeholder="Feet" style = "width: 100px;" autocomplete="off"></input>
+                <input type = "number" id = "heightInches" placeholder="Inches" style = "width: 100px;" autocomplete="off"></input>
 
                 <br><br>
 
                 <label for = "weightInput"><b>Weight: </b></label>
-                <input type = "number" id = "weightInput" placeholder = "Pounds"></input>
+                <input type = "number" id = "weightInput" placeholder = "Pounds" autocomplete="off"></input>
                 
                 <br><br>
         
@@ -46,13 +46,23 @@
                     <div style = "flex-grow: 1;"></div>
                 <p id="bmiOutput"></p>  
             </div>
+
             <script>
                 function processEntries() {	
                     let heightFeet = document.getElementById("heightFeet");
                     let heightInches = document.getElementById("heightInches");
                     let weight = document.getElementById("weightInput");
+                    let output = document.getElementById("bmiOutput");
                     
-                    if (weight.value < 0 || weight.value == ""){
+                    if ((weight.value < 0 || weight.value == "") && (heightFeet.value < 0 || heightFeet.value == "" || heightInches.value < 0 || heightInches.value == "")){
+                        output.textContent = "Invalid Weight and Height";
+                        output.style.textAlign = "center"; 
+                        output.style.border = "solid";  
+                        output.style.width = "auto"; 
+                        output.style.height = "auto"; 
+                        output.style.borderRadius = "15px";
+                        output.style.padding = "5px";
+                    } else if (weight.value < 0 || weight.value == ""){
                         output.textContent = "Invalid Weight";
                         output.style.textAlign = "center"; 
                         output.style.border = "solid";  
@@ -69,7 +79,7 @@
                         output.style.borderRadius = "15px";
                         output.style.padding = "5px";
                     } else{
-                        let totalHeight = (heightFeet.value * 12) + heightInches.value;
+                        let totalHeight = (parseFloat(heightFeet.value) * 12) + parseFloat(heightInches.value);
                         let bmi = (703 * weight.value) / Math.pow(totalHeight, 2);
                         bmi = Math.round(bmi * 10) / 10
                         output.textContent = "Total: " + bmi;

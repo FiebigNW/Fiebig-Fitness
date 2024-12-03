@@ -1,13 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['AccountID'])) {
-    // Redirect to login page if not logged in
     header("Location: index.php");
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collecting user inputs
     $foodAdded = $_POST["dinnerInput"];
     $calories = $_POST['dinnerCalorieInput'];
     $carbs = $_POST['dinnerCarbsInput'];
@@ -16,32 +14,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sodium = $_POST['dinnerSodiumInput'];
     $sugar = $_POST['dinnerSugarInput'];
     $accountID = $_SESSION['AccountID'];
-    $date = date('Y-m-d');  // Ensure this format matches your database
+    $date = date('Y-m-d'); 
     $meal_type = "Dinner";
 
-    // Validate inputs (basic checks to avoid empty fields and non-numeric values for nutrients)
-    if (empty($foodAdded) || !empty($calories) || !empty($carbs) || !empty($fats) || !empty($protein) || !empty($sodium)) {
-        die("Invalid input. Please make sure all fields are filled correctly.");
+    if (empty($foodAdded) || empty($calories) || empty($carbs) || empty($fats) || empty($protein) || empty($sodium) || empty($sugar)) {
+        $_SESSION['errorMessage'] = "Invalid input. Please make sure all fields are filled correctly.";
+        header("Location: EnterDinnerInfo.php");  
+        die();
     }
 
     try {
         require_once "dbConnection.php";
 
-        // Insert data into the Nutrition table
         $query = "INSERT INTO Nutrition (AccountID, Food_Name, Calories, Carbs, Fats, Protein, Sodium, Sugar, Food_Added_Date, Meal_Type) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$accountID, $foodAdded, $calories, $carbs, $fats, $protein, $sodium, $date, $meal_type]);
+        $stmt->execute([$accountID, $foodAdded, $calories, $carbs, $fats, $protein, $sodium, $sugar, $date, $meal_type]);
 
-        // Close the connection and redirect
+       
         $pdo = null;
         $stmt = null;
-        header("Location: food.php");  // Redirect after submission
+        header("Location: food.php"); 
         die();
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: food.php");  // Redirect if not POST
+    header("Location: food.php"); 
 }
 ?>

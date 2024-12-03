@@ -17,19 +17,19 @@
             <h2 style = "color: lightblue;">Fitness</h2>
         </div>
 
-        <div id = "createAccount">
+        <div id = "loginOrCreateAccount">
             <form action = "createAccountFormHandler.php" method = "POST">
                 <h3 style = "font-style: italic; text-align: center;">Create Account</h3>
 
                 <label for="createUsernameInput"><b>Create Username</b></label>
                 <br>
-                <input type="text" name = "usernameInput" placeholder="Enter Username"></input>
+                <input type="text" name = "createUsernameInput" placeholder="Enter Username" autocomplete="off">
 
                 <br><br>
 
                 <label for="createPasswordInput"><b>Create Password</b></label>
                 <br>
-                <input type="password" name = "passwordInput" placeholder="Enter Password"></input>
+                <input type="password" name = "createPasswordInput" placeholder="Enter Password" autocomplete="off">
 
                 <br><br>
 
@@ -43,12 +43,11 @@
            
                 <div id="dateChangeButtons">    
                     <div> 
-                        <button type="submit" class="loginButton" id="createButton">Sign Up</button>
+                        <button type="button" class="loginButton" id="backpButton" onclick="window.location.href='index.php'">Back</button>
                     </div>
                         <div style="flex-grow: 1;"></div>
-
                     <div>
-                        <button type="button" class="loginButton" id="backpButton" onclick="window.location.href='index.php'">Back</button>
+                        <button type="submit" class="loginButton" id="createButton">Sign Up</button>
                     </div>
                 </div> 
             </form>

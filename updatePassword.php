@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['AccountID'])) {
-    header("Location: index.php"); // Redirect to login page if not logged in
+    header("Location: index.php"); 
     exit();
 }
 
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($newPassword)) {
         $_SESSION['errorMessage'] = "Password cannot be empty!";
-        header("Location: changePasswordScreen.php"); // Redirect back to the settings page
+        header("Location: changePasswordScreen.php"); 
         exit();
     }
 

@@ -5,8 +5,9 @@ html{
     
 }
 
-#loginSection {
-    width: 300px; 
+#loginOrCreateAccount {
+    width: 300px;
+    min-height: fit-content;
     padding: 20px; 
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
@@ -21,13 +22,14 @@ html{
     justify-content: space-between; 
 }
 
+
 input{
     justify-content: left;
     border: 2px solid #ccc;
     border-radius: 10px;
     height: 35px;
     width: 100%;
-    max-width: 250px; 
+    max-width: 250px;
     padding: 0 15px;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -50,22 +52,6 @@ input:disabled {
     background-color: #f0f0f0;
     border-color: #ccc;
     color: #888; 
-}
-
-#createAccount{
-    width: 300px; 
-    padding: 20px; 
-    border-radius: 15px;
-    font-family: 'Roboto', sans-serif;
-    background: aliceblue;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    opacity: 70%; 
-    margin: auto;
-    margin-top: 10%;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
 }
 
 h2{
@@ -209,7 +195,7 @@ h2{
 
 #exerciseHome{
     width: 400px;
-    height: 330px;
+    min-height: fit-content;
     padding: 10px;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
@@ -305,14 +291,8 @@ h2{
 
 #macroNutrientsLayout > div {
     margin-bottom: 10px;
-}
-
-#macroNutrientsLayout div h3 {
     margin: 0;
     padding-right: 20px;
-}
-
-#macroNutrientsLayout > div > div {
     display: flex;
     flex-wrap: nowrap;  
     gap: 15px;         
@@ -371,4 +351,11 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#exerciseHeadersLayout {
+    margin-bottom: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    color: #333;
 }

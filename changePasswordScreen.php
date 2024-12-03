@@ -33,7 +33,7 @@ session_start();
         <h3 style="font-style: italic; text-align: center;">Change Password</h3>
 
             <form action="updatePassword.php" method="POST">            
-                <input type="password" name="changePasswordInput" placeholder="Change Password" required></input>
+                <input type="password" name="changePasswordInput" placeholder="Change Password" autocomplete="off" required></input>
 
                 <div id="dateChangeButtons">    
                     <div> 

@@ -11,7 +11,6 @@
     try {
         require_once "dbConnection.php";  
 
-        // Query all workout plan data in one go
         $query = "SELECT Name, DayOne, DayTwo, DayThree, DayFour, DayFive, DaySix, DaySeven FROM Workout WHERE AccountID = :accountID";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':accountID', $accountID);
@@ -85,18 +84,21 @@
                     }
                 }
             ?>
+
         </div>
     </div>
 
     <div id="dateChangeButtons">
-        <div style="flex-grow: 0.4;"></div>    
+        <div style="flex-grow: 0.5;"></div>    
         <div> 
             <a href="EnterWorkoutInfo.php"><button class="loginButton" id="createOwnWorkout">Create Workout Plan</button></a>
         </div>
-        <div style="flex-grow: 0.2;"></div>  
+        <div style="flex-grow: 0.1;"></div>  
         <div> 
-            <button class="loginButton" id="generateRandomWorkout">Generate Random Workout</button>
+            <form action="updateWorkoutPlan.php" method="POST">
+                <button  type = "submit" class="loginButton" id="generateRandomWorkout" name="generateRandomWorkout">Generate Random Workout</button>
+            </form>
         </div>
-        <div style="flex-grow: 0.4;"></div>  
+        <div style="flex-grow: 0.5;"></div>  
     </div>
 </html>

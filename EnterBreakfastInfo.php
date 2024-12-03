@@ -41,6 +41,14 @@ try {
             <a href = "settings.php"><button id = "titleButton">Settings</button></a>
             <a href = "logout.php"><button id = "titleButton">Logout</button></a>
         </div>
+        <style>
+            .error-message {
+                color: red;
+                margin-bottom: 10px;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
     </div>  
     
     <div id = 'homeButtonsContainer'>
@@ -63,39 +71,47 @@ try {
             <h4>Breakfast</h4>
             <form action="addBreakfast.php" method="POST">
                 <label for="breakfastInput">Name</label>
-                <input type="text" name="breakfastInput" placeholder="Type Breakfast Name" style="width: 150px;"></input>
+                <input type="text" name="breakfastInput" placeholder="Type Breakfast Name" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfastCalorieInput">Calories</label>
-                <input type="text" name="breakfastCalorieInput" placeholder="Amount Of Calories" style="width: 150px;"></input>
+                <input type="text" name="breakfastCalorieInput" placeholder="Amount Of Calories" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfasCarbsInput">Carbs</label>
-                <input type="text" name="breakfastCarbsInput" placeholder="Enter Carbs" style="width: 150px;"></input>
+                <input type="text" name="breakfastCarbsInput" placeholder="Enter Carbs" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfastFatsInput">Fats</label>
-                <input type="text" name="breakfastFatsInput" placeholder="Enter Fats" style="width: 150px;"></input>
+                <input type="text" name="breakfastFatsInput" placeholder="Enter Fats" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfastProteinInput">Protein</label>
-                <input type="text" name="breakfastProteinInput" placeholder="Enter Protein" style="width: 150px;"></input>
+                <input type="text" name="breakfastProteinInput" placeholder="Enter Protein" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfastSodiumInput">Sodium</label>
-                <input type="text" name="breakfastSodiumInput" placeholder="Enter Sodium" style="width: 150px;"></input>
+                <input type="text" name="breakfastSodiumInput" placeholder="Enter Sodium" style="width: 150px;" autocomplete="off"></input>
 
                 <br>
 
                 <label for="breakfastSugarInput">Sugar</label>
-                <input type="text" name="breakfastSugarInput" placeholder="Enter Sugar" style="width: 150px;"></input>
+                <input type="text" name="breakfastSugarInput" placeholder="Enter Sugar" style="width: 150px;" autocomplete="off"></input>
                 
-                <br><br>               
+                <br><br>
+                
+                <?php
+                    if (isset($_SESSION['errorMessage'])) {
+                        echo '<p class="error-message">' . htmlspecialchars($_SESSION['errorMessage']) . '</p>';
+                        unset($_SESSION['errorMessage']);
+                    }
+                ?>
+
                 
                 <div id = dateChangeButtons>    
                     <div> 

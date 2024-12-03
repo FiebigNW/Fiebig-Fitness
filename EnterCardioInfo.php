@@ -31,7 +31,7 @@ $exerciseTypes = ['Cardio', 'Strength'];
 $exerciseData = [];
 
 foreach ($exerciseTypes as $exerciseType) {
-    $query = "SELECT ExerciseName, Calories_Burned
+    $query = "SELECT ExerciseName
             FROM Exercises
             WHERE AccountID = :accountID AND Exercise_Type = :exerciseType AND Exercise_Date = :date";
 
@@ -60,6 +60,14 @@ foreach ($exerciseTypes as $exerciseType) {
             <a href = "settings.php"><button id = "titleButton">Settings</button></a>
             <a href = "logout.php"><button id = "titleButton">Logout</button></a>
         </div>
+        <style>
+            .error-message {
+                color: red;
+                margin-bottom: 10px;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
     </div>  
     
     <div id = 'homeButtonsContainer'>
@@ -80,38 +88,26 @@ foreach ($exerciseTypes as $exerciseType) {
 
         <div id="exerciseLayout">
 
-        <div id="exerciseHeadersLayout"> 
-            <div style="display: flex; flex-wrap: nowrap; gap: 10px; justify-content: start; align-items: center;">
-                <div style="flex-grow: 1;"></div>
-                <h4 style="border: solid; padding: 3px;">Name</h4>
-                <h4 style="border: solid; padding: 3px;">Calories Burned</h4>
-            </div>
-        </div>
+            <h4>Cardio Vascular Exercise</h4>
+            <form action="addCardioExercise.php" method="POST">
+                <input type="text" name="exerciseNameInput" id="exerciseNameInput" placeholder="Type Exercise"  style = "width: 150px;" autocomplete="off" >
+                <input type="text" name="caloriesBurnedInput" id="caloriesBurnedInput" placeholder="Calories Burned" style = "width: 150px;" autocomplete="off">
+                <input type="hidden" name="exerciseType" value="Cardio Vascular Exercise">
+                <input type="hidden" name="exerciseDate" value="<?php echo $dateView; ?>">
+                <button type="submit" class="loginButton">Submit</button>
+            </form>
 
-        <?php
-            foreach ($exerciseData as $exercise => $works) {
-                echo "<h3>$exercise</h3>";
-                echo "<table style='width: 100%; text-align: center;'>";
-                foreach ($works as $work) {
-                    echo "<tr>
-                        <td>
-                        <td style = 'width: 100px;'></td>
-                        <td>{$work['ExerciseName']}</td>
-                        <td>{$work['Calories_Burned']}</td>
-                        </tr>";
+            
+            <?php
+                if (isset($_SESSION['errorMessage'])) {
+                    echo '<p class="error-message">' . htmlspecialchars($_SESSION['errorMessage']) . '</p>';
+                    unset($_SESSION['errorMessage']);
                 }
-                echo "</table>";
-                echo "<a href='Enter{$exercise}Info.php'><p>Add Exercise</p></a><br><br>";
-            }
-        ?>
+            ?>
 
             <div id="dateChangeButtons">    
                 <div> 
-                    <a href="exercise.php?moveBackwards=true&date=<?php echo $dateView; ?>"><button class="loginButton">Previous</button></a>
-                </div>
-                    <div style="flex-grow: 1;"></div>
-                <div> 
-                    <a href="exercise.php?moveForwards=true&date=<?php echo $dateView; ?>"><button class="loginButton">Next</button></a>
+                    <a href="exercise.php"><button class="loginButton">Back</button></a>
                 </div>
             </div>
         </div>

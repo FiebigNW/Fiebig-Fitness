@@ -2,8 +2,8 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["usernameInput"];
-    $password = $_POST["passwordInput"];
+    $username = $_POST["createUsernameInput"];
+    $password = $_POST["createPasswordInput"];
 
     if (empty($username) || empty($password)) {
         $_SESSION['errorMessage'] = "Username or password cannot be empty.";
